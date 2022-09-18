@@ -21,23 +21,25 @@ HTTP calls are expected in the order in which you have declared them
 
 For example:
 ```go
+import ts "github.com/peliseev/testserver"
+
 func TestFunc(t *testing.T) {
     // Create new instance
-    ts := testserver.New(t)
+    srv := testserver.New(t)
     
     // Add some expectations
-    ts.Add(EXPECT().Method("GET").Path("/api/profile").
+    srv.Add(ts.EXPECT().Method("GET").Path("/api/profile").
 		RespWithStatus(200).
 		RespWithBody(profile))
 	
-    ts.Add(EXPECT().Method("POST").Path("/api/order").
+    srv.Add(ts.EXPECT().Method("POST").Path("/api/order").
 		RespWithStatus(200).
 		RespWithBody(done).Times(2))
     ...
     
     // Start test Server
-    ts.Start()
-    defer ts.Stop()
+    srv.Start()
+    defer srv.Stop()
     
     // Create an instance of the object under test
     service := order.New(ts.URL)
