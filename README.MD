@@ -7,7 +7,7 @@ After `go mod init <your_project_name>` and `go mod tidy` just run:
 ```
 go get github.com/peliseev/testserver
 ```
-# Building Mocks
+# Usage
 The common way to use this framework is as follows:
 
 1. Create new instance of `TestServer`
