@@ -25,7 +25,7 @@ import ts "github.com/peliseev/testserver"
 
 func TestFunc(t *testing.T) {
     // Create new instance
-    srv := testserver.New(t)
+    srv := ts.New(t)
     
     // Add some expectations
     srv.Add(ts.EXPECT().Method("GET").Path("/api/profile").
