@@ -1,6 +1,6 @@
 # testserver
 
-testserver is a framework for mocking http server. It integrates with Go's built-in `testing`.
+testserver is a simple framework for mocking http server. It integrates with Go's built-in `testing`.
 
 # Installation
 After `go mod init <your_project_name>` and `go mod tidy` just run:
