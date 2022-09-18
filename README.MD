@@ -17,6 +17,8 @@ The common way to use this framework is as follows:
 5. Call the methods under test
 6. Check the results
 
+HTTP calls are expected in the order in which you have declared them
+
 For example:
 ```go
 func TestFunc(t *testing.T) {
